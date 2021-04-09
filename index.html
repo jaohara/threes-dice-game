@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <title>Threes</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="John O'Hara">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Open+Sans&family=Rubik&family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!---
+    // TITLE SCREEN/INSTRUCTIONS CONTAINER
+    ---->
+    <div id="titlescreen-container">
+        <div id="game-over-container" class="hidden-container">
+            <h1>Game Over!</h1>
+            <p>
+                Remember: you can always borrow money from the friends you haven't alienated yet!
+            </p>
+        </div>
+        <div id="titlescreen-header">
+            <h1>threes!</h1>
+            <h3>a game by John O'Hara</h3>
+        </div>
+        <div id="titlescreen-controls">
+            <p></p>
+            <label for="player-name-input">
+                Player Name:<br>
+                <input id="player-name-input" type="text">
+            </label>
+            <br>
+            <label for="cpu-count-input">
+                CPU Players:
+                <select id="cpu-count-input" required>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+            <br>
+            <button id="new-game" disabled>Start Game!</button>
+            <button id="show-instructions">How to Play</button>
+        </div>
+        <div id="instructions" class="hidden-container">
+            <p>
+                You've survived another shift at work and have a meager amount of cash - mostly
+                ones - burning a hole in your pocket. What's the best way to forget about the Sisyphean
+                capitalist nightmare in which you unwillingly partake? Why, low-stakes gambling,
+                of course!
+            </p>
+
+            <h2>Rules &#128081;</h2>
+
+            <p>
+                The goal of the game is simple - <strong>the player with the lowest dice score wins.</strong>
+            </p>
+
+            <p>
+                To buy into a new round, each player pays a dollar into the pot. The current player rolls all five dice 
+                at the start of their turn. After each roll, the player <strong>must choose at least one die
+                to keep by clicking on it</strong>, although they can keep as many of the remaining dice as they
+                wish. <strong>All other dice are rerolled when the roll button is clicked,</strong> and the turn
+                continues until there are no more dice remaining.
+            </p>
+
+            <p>
+                Players are eliminated if a round starts and they don't have a dollar for the buy-in.
+            </p>
+
+            <h2>Scoring &#127922;</h2>
+
+            <p>
+                All dice are worth their face value <strong>with the exception of the titular threes, which are worth
+                zero.</strong>
+            </p>
+
+            <h2>Push Round &#129474;</h2>
+
+            <p>
+                If a low round score is tied by another player but not beaten by the end of the
+                round, a <strong>push round</strong> is started - all players put another dollar
+                into the pot and another round begins with the larger pot. The most recent player
+                to match the low score rolls first. <strong>If a player paid their last dollar buying
+                into the previous round, they get a free pass into the push round.</strong>
+            </p>
+
+            <p>
+                Multiple push rounds are possible if the low score continues to be tied but not beaten.
+            </p>
+
+            <p>
+                <strong>So, come on! You've already spent all day pushing the boulder up that hill,
+                    why not enjoy the tumble down?</strong>
+            </p>
+        </div>
+    </div>
+
+    <div id="game-wrapper" class="hidden-container">
+        <div id="header">
+            <h1>threes</h1>
+
+            <div id="pot-container">
+                <span class="blue">Current Pot:</span> <span id="the-pot"></span><br>
+                <span class="blue">Score to Beat:</span> <span id="current-best-score">-</span>
+            </div>
+        </div>
+
+
+        <!---
+        // GAMEPLAY CONTAINER
+        ---->
+        <div id="dice-cup">
+            <h1 id="player-name"></h1>
+            <h1>Current Score: <span id="dice-total"></span></h1>
+            <div id="dice-container">
+                <div id="die-1" class="dice d1"></div>
+                <div id="die-2" class="dice d2"></div>
+                <div id="die-3" class="dice d3"></div>
+                <div id="die-4" class="dice d4"></div>
+                <div id="die-5" class="dice d5"></div>
+            </div>
+            <div id="dice-controls">
+                <button id="dice-roll">Roll</button>
+            </div>
+        </div>
+    </div>
+
+    <!---
+    // OUTPUT CONTAINER
+    ---->
+    <div id="output-wrapper" class="hidden-container">
+        <div id="player-container">
+            <h1>players:</h1>
+            <div id="player-list"></div>
+        </div>
+        <button id="forfeit-button">Forfeit Game</button>
+        <label for="output-scroll"><input type="checkbox" id="output-scroll" checked>
+        Follow new messages</label>
+        <div id="output-container">
+        </div>
+        <footer>
+            A Game by John O'Hara in 2021
+        </footer>
+    </div>
+</body>
+
+<script src="js/helpers.js"></script>
+<script src="js/die.js"></script>
+<script src="js/dicecup.js"></script>
+<script src="js/player.js"></script>
+<script src="js/main.js"></script>
+</html>

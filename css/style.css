@@ -1,0 +1,373 @@
+/*Main Layout*/
+*{
+    background-color: #222;
+    color: #eee;
+    font-family: "Rubik", "Rubik", sans-serif;
+}
+
+div#game-wrapper{
+    float: left;
+    width: 60%;
+}
+
+div#output-wrapper{
+    width: 33%;
+    float: left;
+}
+
+div#header, div#output-wrapper{
+    background: #111;
+    border-radius: 10px;
+    margin-bottom: 0;
+    padding: 1.5em;
+}
+
+div#player-container, div#player-list, div#output-wrapper h1{
+    background: inherit;
+}
+
+
+div#output-wrapper h1{
+    margin-top: 0;
+    /*text-align: center;*/
+}
+
+div#game-wrapper{
+    margin-right: 1.0em;
+}
+
+div#game-wrapper div#dice-container{
+    margin-bottom: 2.0em;
+}
+
+
+#header h1{
+    background: inherit;
+    display: inline-block;
+    font-size: 3.0em;
+    margin: 0;
+    width: 30%
+}
+
+#header div{
+    background: inherit;
+    float: right;
+    font-size: 1.6em;
+    text-align: center;
+    width: 50%;
+}
+
+#header div span{
+    background: inherit;
+}
+
+#header div span.blue{
+    color: #2A7BDE;
+    font-family: "Titan One";
+}
+
+#the-pot, #current-best-score{
+    margin-left: 2.0em;
+}
+
+footer{
+    background: inherit;
+    color: #2A7BDE;
+    /*font-family: "Titan One";*/
+    font-size: 1.0em;
+    font-weight: bold;
+    margin: 1.0em 0 0 0;
+    text-align: center;
+}
+
+h1, h2, h3, header-font{
+    color: #2A7BDE;
+    font-family: "Titan One", "Fascinate";
+    font-weight: 400;
+}
+h1, h2, h3, #output-container { text-shadow: 2px 2px 0px #111; }
+
+/*Title Screen*/
+
+div#titlescreen-container{
+    /*
+    height: 600px;
+    overflow: auto;*/
+    margin: 1.0em 3.0em;
+    padding: 1.0em 3.0em;
+}
+
+div#titlescreen-header, div#game-over-container{
+    text-align: center;
+}
+
+div#titlescreen-header h1, div#game-over-container h1{
+    font-size: 7.0em;
+    margin: .1em;
+}
+
+div#game-over-container h1{
+    color: maroon;
+}
+
+div#titlescreen-header h3{
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: .25em;
+    text-shadow: #333;
+}
+
+div#titlescreen-controls{
+    font-size: 2.0em;
+    line-height: 2.0em;
+    margin: 2.0em;
+    text-align: center;
+}
+
+div#titlescreen-controls label, div#titlescreen-controls button{
+    color: #2A7BDE;
+    font-family: "Titan One";
+}
+
+div#titlescreen-controls input, div#titlescreen-controls select{
+    background: #555;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 1.0em;
+    outline: none;
+    padding: .25em;
+    text-align: center;
+}
+
+div#titlescreen-controls button{
+    background: #2A7BDE;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.0em;
+    margin-top: 1.0em;
+    padding: .5em;
+    text-shadow: 1px 1px 0px #333;
+}
+
+div#titlescreen-controls button:disabled{
+    cursor: not-allowed;
+    opacity: 33%;
+}
+
+div#instructions{
+    font-size: 1.3em;
+    line-height: 1.5em;
+    padding: 0em 4em;
+}
+
+div#instructions strong{
+    color: #2A7BDE;
+    text-shadow: 1px 1px 0px #000;
+}
+
+/*Output Panel*/
+div#output-container{
+    background: #232323;
+    border-radius: 5px;
+    height: 280px;
+    line-height: 1.5em;
+    overflow: auto;
+    padding: 1.0em;
+}
+
+div#output-container ul{
+    background: inherit;
+}
+
+div#output-container ul li{
+    background: inherit;
+}
+
+div#output-wrapper label{
+    border-radius: 5px 5px 0 0;
+    color: #2A7BDE;
+    font-size: .75em;
+    padding: .75em;
+}
+
+#forfeit-button {
+    background: #2A7BDE;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-family: "Titan One";
+    font-size: 1.0em;
+    margin: 1.0em auto;
+    outline: none;
+    padding: .75em;
+    text-shadow: 1px 1px 0px #333;
+}
+
+#forfeit-button.hidden-container{
+    display: none;
+}
+
+#forfeit-button:hover {
+    cursor: pointer;
+}
+
+/*Player CSS*/
+
+div#player-list{
+    text-align: center;
+}
+
+span.player-string{
+    background: #444;
+    border-radius: 5px;
+    border-left: 15px solid;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 1.0em;
+    margin-right: 1.0em;
+    padding: .5em;
+    text-shadow: 1px 1px 0px #222;
+    transition: background .5s, opacity .5s, box-shadow .5s;
+    white-space: nowrap;
+}
+
+span.player-string.retired {
+    opacity: 40%;
+}
+
+span.player-string.current{
+    background: #777;
+}
+
+span.player-string.leader {
+    box-shadow: 0px 0px 5px gold;
+}
+
+span.player-cash{
+    background-color: #087908;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#dice-cup h1#player-name{
+    text-align: left;
+}
+
+#dice-cup h1#player-name span.output {
+    font-family: "Titan One";
+}
+
+/*Dice*/
+#dice-cup{
+    /*
+    background-color: #024502;
+    background-image: url("../img/45-degree-fabric-light.png");
+    */
+    border-radius: 5px;
+    padding: 32px;
+}
+
+#dice-container{
+    background: inherit;
+    text-align:center;
+}
+
+#dice-cup h1{
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 1.0em;
+    text-align: center;
+}
+
+#dice-cup h1 span{
+    background: inherit;
+    color: #eee;
+    font-size: 1.5em;
+    margin: 0 1.0em;
+}
+
+div.dice{
+    box-shadow: 5px 5px 0px #333;
+    display: inline-block;
+    height: 128px;
+    width: 128px;
+    margin: 0 2.5% 2.5% 0;
+}
+
+div.d1, div.d2, div.d3, div.d4, div.d5, div.d6, div.spin {
+    background-color: #fff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 10px solid #000;
+    border-radius: 25px;
+    background-size: 125%;
+}
+
+div.d1   { background-image: url("../img/1.png"); }
+div.d2   { background-image: url("../img/2.png"); }
+div.d3   { background-image: url("../img/3.png"); }
+div.d4   { background-image: url("../img/4.png"); }
+div.d5   { background-image: url("../img/5.png"); }
+div.d6   { background-image: url("../img/6.png"); }
+div.spin { background-image: url("../img/spin.gif");}
+
+div.dice.d-human:hover, div.dice.d-human.locked:hover{
+    border: 10px solid #2A7BDE;
+    cursor: pointer;
+}
+
+div.dice.locked {
+    border: 10px solid #087908;
+}
+
+div.dice.locked.final-lock, div.dice.locked.final-lock:hover {
+    border: 10px solid #CB4B16;
+    cursor: default;
+}
+
+div#dice-controls{
+    background: inherit;
+    text-align: center;
+}
+
+#dice-roll, #new-cup{
+    background-color: maroon;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px #333;
+    font-family: "Titan One";
+    font-size: 1.5em;
+    margin: 0 1em;
+    outline: none;
+    padding: 1.0em;
+    text-shadow: 2px 2px 0px #222;
+}
+
+#new-cup{
+    /* Disabling this for the moment*/
+    display: none;
+}
+
+#dice-roll:hover{
+    cursor: pointer;
+}
+
+#dice-roll:disabled{
+    opacity: 33%;
+    cursor: not-allowed;
+}
+
+#dice-roll.cpu {
+    display: none;
+}
+
+
+/*Misc/Temp*/
+div.hidden-container{
+    display: none;
+}
